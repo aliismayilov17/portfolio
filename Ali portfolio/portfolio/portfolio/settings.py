@@ -152,4 +152,4 @@ LOGOUT_REDIRECT_URL = '/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-ALLOWED_HOSTS = ['portfolio-2ews.onrender.com']
+ALLOWED_HOSTS = ['portfolio-2ews.onrender.com', '127.0.0.1']
