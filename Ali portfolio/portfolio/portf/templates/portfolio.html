@@ -186,6 +186,11 @@
       background:#1877f2;
     }
 
+
+    .linkedin{
+  background:#0a66c2;
+}
+
     .comment{
       background:rgba(255,255,255,0.08);
       padding:18px;
@@ -258,21 +263,52 @@
 </div>
 
     <!-- Social Links -->
-    <div class="social-links">
+<div class="social-links">
 
-      <a href="https://linkedin.com/in/yourusername" target="_blank">
-        <i class="fa-brands fa-linkedin-in"></i>
-      </a>
+  <!-- LinkedIn -->
+  <a href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME" target="_blank">
+    <i class="fa-brands fa-linkedin-in"></i>
+  </a>
 
-      <a href="https://twitter.com/yourusername" target="_blank">
-        <i class="fa-brands fa-x-twitter"></i>
-      </a>
+  <!-- GitHub -->
+  <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank">
+    <i class="fa-brands fa-github"></i>
+  </a>
 
-      <a href="https://github.com/yourusername" target="_blank">
-        <i class="fa-brands fa-github"></i>
-      </a>
+  <!-- Facebook -->
+  <a href="https://facebook.com/YOUR_FACEBOOK_USERNAME" target="_blank">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
 
-    </div>
+  <!-- Google / Gmail -->
+  <a href="mailto:<!-- Social Links -->
+<div class="social-links">
+
+  <!-- LinkedIn -->
+  <a href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME" target="_blank">
+    <i class="fa-brands fa-linkedin-in"></i>
+  </a>
+
+  <!-- GitHub -->
+  <a href="https://github.com/aliismayilov17" target="_blank">
+    <i class="fa-brands fa-github"></i>
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://facebook.com/YOUR_FACEBOOK_USERNAME" target="_blank">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+
+  <!-- Google / Gmail -->
+  <a href="mailto:aliismayilovx@gmail.com">
+    <i class="fa-brands fa-google"></i>
+  </a>
+
+</div>">
+    <i class="fa-brands fa-google"></i>
+  </a>
+
+</div>
 
     <!-- Comments -->
     <div class="comments-box">
@@ -324,6 +360,12 @@
             Facebook
           </a>
 
+
+
+          <a href="{% url 'social:begin' 'linkedin-oauth2' %}" class="linkedin">
+            <i class="fa-brands fa-linkedin-in"></i>
+            LinkedIn
+          </a>
         </div>
 
       </div>
@@ -332,7 +374,7 @@
 <!-- Existing Comments -->
 
       {% for comment in comments %}
-      </br>
+      
         <div class="comment">
         
           <div class="comment-user">
