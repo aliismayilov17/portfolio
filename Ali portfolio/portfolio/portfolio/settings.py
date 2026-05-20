@@ -132,6 +132,7 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.github.GithubOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.linkedin.LinkedinOAuth2',
 
     'django.contrib.auth.backends.ModelBackend',
 )
@@ -144,6 +145,15 @@ SOCIAL_AUTH_GITHUB_SECRET = 'YOUR_GITHUB_SECRET'
 
 SOCIAL_AUTH_FACEBOOK_KEY = 'YOUR_FACEBOOK_KEY'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'YOUR_FACEBOOK_SECRET'
+
+
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = 'YOUR_LINKEDIN_CLIENT_ID'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'YOUR_LINKEDIN_CLIENT_SECRET'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SCOPE = [
+    'openid',
+    'profile',
+    'email',
+]
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
