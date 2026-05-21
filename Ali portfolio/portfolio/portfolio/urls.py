@@ -28,10 +28,7 @@ urlpatterns = [
     # INCLUDE APP URLS
     path('', include('portf.urls')),
 
-    path(
-        'social-auth/',
-        include('social_django.urls', namespace='social')
-    ),
+    path('social-auth/', include('social_django.urls', namespace='social')),
 ]
 
 urlpatterns += static(
