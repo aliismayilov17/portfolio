@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1^2&adwg10fsb+d(y2&dnj=p%6-zpn4zw(u-)*ybcky)21b595'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ 
 
 
 # Application definition
@@ -149,7 +149,11 @@ SOCIAL_AUTH_GITHUB_SECRET = os.environ.get(
     'SOCIAL_AUTH_GITHUB_SECRET'
 )
 
+#SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '457719391438-cckm4u65sbt47fts98ptge5ftlfd3usb.apps.googleusercontent.com'
+#SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
+#SOCIAL_AUTH_GITHUB_KEY = 'Ov23lisZC5FFJqzK2rXN'
+#SOCIAL_AUTH_GITHUB_SECRET = 'cb270642c0fb0135a02f271cc748136fd6e1ddfd'
 
 
 
@@ -176,17 +180,24 @@ LOGOUT_REDIRECT_URL = '/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-ALLOWED_HOSTS = ['portfolio-2ews.onrender.com', '127.0.0.1']
+ALLOWED_HOSTS = ['portfolio-2ews.onrender.com', '127.0.0.1','localhost']
 
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
+SESSION_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SAMESITE = 'Lax'
 
 CSRF_TRUSTED_ORIGINS = [
     'https://portfolio-2ews.onrender.com',
+
+    'http://127.0.0.1:8000',
+    'http://localhost:8000',
 ]
 
 
