@@ -129,31 +129,40 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTHENTICATION_BACKENDS = (
-    'social_core.backends.google.GoogleOAuth2',
+    #'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.github.GithubOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
-    'social_core.backends.linkedin.LinkedinOAuth2',
 
     'django.contrib.auth.backends.ModelBackend',
 )
+import os
+SOCIAL_AUTH_GITHUB_KEY = os.environ.get(
+    'SOCIAL_AUTH_GITHUB_KEY'
+)
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'YOUR_GOOGLE_KEY'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'YOUR_GOOGLE_SECRET'
-
-SOCIAL_AUTH_GITHUB_KEY = 'YOUR_GITHUB_KEY'
-SOCIAL_AUTH_GITHUB_SECRET = 'YOUR_GITHUB_SECRET'
-
-SOCIAL_AUTH_FACEBOOK_KEY = 'YOUR_FACEBOOK_KEY'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'YOUR_FACEBOOK_SECRET'
+SOCIAL_AUTH_GITHUB_SECRET = os.environ.get(
+    'SOCIAL_AUTH_GITHUB_SECRET'
+)
 
 
-SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = 'YOUR_LINKEDIN_CLIENT_ID'
-SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'YOUR_LINKEDIN_CLIENT_SECRET'
-SOCIAL_AUTH_LINKEDIN_OAUTH2_SCOPE = [
-    'openid',
-    'profile',
-    'email',
-]
+
+
+
+
+
+
+
+
+# GOOGLE
+#SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get(
+  # 'SOCIAL_AUTH_GOOGLE_OAUTH2_KEY'
+
+#)
+
+#SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get(
+#    'SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET'
+#)
+
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -163,22 +172,3 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 ALLOWED_HOSTS = ['portfolio-2ews.onrender.com', '127.0.0.1']
-
-import os
-# GOOGLE OAUTH
-
-#SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '457719391438-cckm4u65sbt47fts98ptge5ftlfd3usb.apps.googleusercontent.com'
-
-#SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
-
-
-
-
-# GOOGLE
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get(
-    'SOCIAL_AUTH_GOOGLE_OAUTH2_KEY'
-)
-
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get(
-    'SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET'
-)
