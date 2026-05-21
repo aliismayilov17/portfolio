@@ -44,14 +44,14 @@ INSTALLED_APPS = [
 SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -63,10 +63,14 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
+    'django.template.context_processors.request',
+
+    'django.contrib.auth.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
+
+    'social_django.context_processors.backends',
+    'social_django.context_processors.login_redirect',
+],
         },
     },
 ]
@@ -184,3 +188,6 @@ CSRF_COOKIE_SECURE = True
 CSRF_TRUSTED_ORIGINS = [
     'https://portfolio-2ews.onrender.com',
 ]
+
+
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
