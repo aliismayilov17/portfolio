@@ -163,3 +163,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 ALLOWED_HOSTS = ['portfolio-2ews.onrender.com', '127.0.0.1']
+
+
+# GOOGLE OAUTH
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '457719391438-cckm4u65sbt47fts98ptge5ftlfd3usb.apps.googleusercontent.com'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
