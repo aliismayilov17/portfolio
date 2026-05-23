@@ -288,82 +288,12 @@
 
 </div>
 
-    <!-- Comments -->
-    <div class="comments-box">
-
-      <h2>Comments</h2>
+    
 
       
-
-      <!-- ONLY SHOW FORM IF LOGGED IN -->
-      {% if user.is_authenticated %}
-
-      <form method="POST">
-        {% csrf_token %}
-
-        <textarea
-          name="comment"
-          placeholder="Write your comment..."
-          required
-        ></textarea>
-
-        <button type="submit" class="submit-btn">
-          Post Comment
-        </button>
-      </form>
-
-      {% else %}
-
-      <!-- LOGIN REQUIRED -->
-      <div class="login-required">
-
-        <p>
-          You must login with social media to post comments.
-        </p>
-
-        <div class="login-buttons">
-
-          <a href="{% url 'social:begin' 'google-oauth2' %}" class="google">
-            <i class="fa-brands fa-google"></i>
-            Google
-          </a>
-
-          <a href="{% url 'social:begin' 'github' %}" class="github">
-            <i class="fa-brands fa-github"></i>
-            GitHub
-          </a>
-
-       
-
-
-
-        </div>
-
-      </div>
-
-      {% endif %}
-<!-- Existing Comments -->
-
-      {% for comment in comments %}
-
-    </br>
-      
-        <div class="comment">
-        
-          <div class="comment-user">
-            {{ comment.user.username }}
-          </div>
-
-          <div>
-            {{ comment.text }}
-          </div>
-        </div>
-      {% endfor %}
     </div>
 
-  </div>
-
-</div>
+ 
 
 </body>
 </html>
